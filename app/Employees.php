@@ -16,8 +16,8 @@ class Employees extends Model
         ];
     
 
-    public function jobs()
-    {
-        return $this->belongsTo('App\Jobs','id_jobs');
-    }
+        public function jobs()
+        {
+            return $this->belongsTo('App\Jobs','id_jobs', 'id_jobs');
+        }
 }
