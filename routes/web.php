@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::user()){
+        return redirect('/jobs');
+    }else{
+        return view('welcome');
+    }
 });
 Route::get('/info', function () {
     return view('info');
