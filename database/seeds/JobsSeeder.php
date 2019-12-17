@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class JobsSeeder extends Seeder
 {
@@ -11,6 +12,12 @@ class JobsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker\Factory::create();
+        $limit = 10;
+        for($i =0; $i<$limit; $i++){
+            DB::table('jobs')->insert([
+                'name' => $faker->name,
+            ]);
+        }
     }
 }
